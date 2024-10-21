@@ -51,7 +51,13 @@ namespace LeaveAllowance.Application.LeaveTypes
 
         public IEnumerable<LeaveTy> Getall()
         {
-            IEnumerable<LeaveTy> leaveTies = _context.leaveTypes.ToList();
+            IEnumerable<LeaveTy> leaveTies = _context.leaveTypes.Select(u => new LeaveTy
+            {
+                Id = u.Id,
+                LeaveType = u.LeaveType,
+                Duration = u.Duration,
+            }
+                );
             return leaveTies;
         }
 
