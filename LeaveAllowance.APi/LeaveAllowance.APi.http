@@ -1,0 +1,6 @@
+@LeaveAllowance.APi_HostAddress = http://localhost:5018
+
+GET {{LeaveAllowance.APi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
